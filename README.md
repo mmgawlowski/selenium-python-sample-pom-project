@@ -27,7 +27,7 @@ I don't know how it will act when copied to someone else but it can be set up la
 *CMD*:
 1. *Go to Selenium Folder*
 2. *Shift + right-click - click on "Open command window here" (It's "Otwórz okno polecenia tutaj" in Polish) to open cmd with current path selected*
-3. *Type python and path to the file you want to execute (e.g. below) and press enter (only files from Tests and TestSuites folders should be executed):* 
+3. *Type "python" and path to the file you want to execute - use Tab for autofilling, (e.g. below) and press enter (only files from Tests and TestSuites folders should be executed):* 
 ```
 ...\Selenium>python Projects\SamplePOMProject_Booking_com\Tests\TestSearchResult.py
 ``` 
