@@ -20,7 +20,7 @@ I chose booking.com website as not so complicated but still "real life" example.
 
 ## Running:
 I've uploaded my whole project with its internal structure. It should be downloaded or created in same way. You can simply put it into you PyCharm PycharmProjects folder or wherever you want. "venv" folder is created by PyCharm as isolated Python environment.
-I don't know how it will act when copied to someone else but it can be set up later in PyCharm or deleted when projects is executed from cmd only.
+I don't know how it will act when copied to someone else but it can be set up later in PyCharm or deleted when project is executed from cmd only.
 
 *Steps to run:*
 
