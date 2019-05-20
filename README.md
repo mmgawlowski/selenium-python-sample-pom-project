@@ -59,7 +59,7 @@ Sample screenshot:
 ![Image](https://github.com/mmgawlowski/Selenium_Python_PyCharm_Sample_POM_project/blob/master/Selenium/Projects/SamplePOMProject_Booking_com/Reports/Reports20190519/test_search_for_place_by_query%2020190519_205151.png?raw=true)
 
 ## Suggestions - to do list:
-- HTMLTestRunner could be implemented instead of html-testRunner as it is more elegant for generation of test suites reports but it is not compatible with newer version of Python. There are people who work on that but their newest version is compatible only up to Python 3.5. Look [here](https://github.com/dash0002/HTMLTestRunner) for details
+- HTMLTestRunner could be implemented instead of html-testRunner as it is more elegant for generation of test suites reports but it is not compatible with newer version of Python. There are people who work on that but their newest version is compatible only up to Python 3.5. Look [here](https://github.com/dash0002/HTMLTestRunner) for details.
 
 - Test from TestSearchResult should be divided to smaller tests or soft assertion should be implemented but "softtest" package is not compatible with version of Python I used. Those assertion are dependent on each other so before dividing them I need to find a way to run them one by one, not parallel and skip them when earlier test fail.
 
@@ -88,7 +88,7 @@ works fine but only for test cases directly executed and cannot be applied for t
 
 - I want to find a way to create additional report folder with name of executed file for better reports and screenshots organization. It is not easy to make them both being created in one folder.
 
-- code optimization
+- Code optimization.
 
 ## Authors:
 - Maciek Gawłowski [LinkedIn](https://www.linkedin.com/in/maciek-gaw%C5%82owski-a69a9483/)
