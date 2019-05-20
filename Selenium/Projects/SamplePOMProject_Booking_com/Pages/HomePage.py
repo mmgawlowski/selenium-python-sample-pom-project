@@ -39,8 +39,8 @@ class HomePage(BasePage):
     def search(self):
         self.driver.find_element_by_xpath(Locators.search_button_xpath).click()
 
-    # Method for checking if home page is loaded and it's title contains phrase "Booking.com"
-    # It return True or False to assertion from Test Case
+    # Method for checking if home page is loaded and its title contains phrase "Booking.com"
+    # It returns True or False to assertion from Test Case
     def check_home_page_loaded(self):
         try:
             wait(self.driver, 10).until(
