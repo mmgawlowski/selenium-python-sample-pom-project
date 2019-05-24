@@ -20,16 +20,16 @@ I chose booking.com website as not so complicated but still "real life" example.
 
 ## Running:
 I've uploaded my whole project with its internal structure. It should be downloaded or created in same way. You can simply put it into you PyCharm PycharmProjects folder or wherever you want. "venv" folder is created by PyCharm as isolated Python environment.
-I don't know how it will act when copied to someone else but it can be set up later in PyCharm or deleted when project is executed from cmd only.
+I don't know how it will act when copied to someone else but it can be set up later in PyCharm or deleted when project is executed from cmd only. Try to open pyvenv.cfg file and replace `home = C:\Users\Gaweł\AppData\Local\Programs\Python\Python37-32` with the path to your Python's installation folder.
 
 *Steps to run:*
 
 *CMD*:
-1. *Go to Selenium Folder*
+1. *Go to SamplePOMProject_Booking_com folder*
 2. *Shift + right-click - click on "Open command window here" (It's "Otwórz okno polecenia tutaj" in Polish) to open cmd with current path selected*
 3. *Type "python" and path to the file you want to execute - use Tab for autofilling, (e.g. below) and press enter (only files from Tests and TestSuites folders should be executed):* 
 ```
-...\Selenium>python Projects\SamplePOMProject_Booking_com\Tests\TestSearchResult.py
+...\SamplePOMProject_Booking_com>python Tests\TestSearchResult.py
 ``` 
 
 *PyCharm*
@@ -45,6 +45,31 @@ if __name__ == '__main__':
 ```
 **which means that test runner will be run only when file is executed directly from cmd. That doesn't apply to test suite file.**
 
+*for headless mode change code of TestTemplate file from:*
+```python
+@classmethod
+    def setUpClass(cls):
+       #options = Options()
+       #options.headless = True
+       #options.add_argument("--window-size=1920x1080")
+        cls.driver = webdriver.Chrome()  # Add options=options into brackets
+        print("Run started")
+        cls.driver.maximize_window()
+        cls.driver.get("https://www.booking.com/index.pl.html")
+```
+*to*
+```python
+@classmethod
+    def setUpClass(cls):
+        options = Options()
+        options.headless = True
+        options.add_argument("--window-size=1920x1080")
+        cls.driver = webdriver.Chrome(options=options)
+        print("Run started")
+        cls.driver.maximize_window()
+        cls.driver.get("https://www.booking.com/index.pl.html")
+```
+
 **Example of report and automated screenshot:**
 
 Report pass:
@@ -53,7 +78,7 @@ Report pass:
 Report fail:
 ![Image](https://github.com/mmgawlowski/Selenium_Python_PyCharm_Sample_POM_project/blob/master/Selenium/Projects/SamplePOMProject_Booking_com/Reports/Reports20190519/Sample%20report%20failed.png?raw=true)
 
-**Important Note: those reports are generated as HTML files. They use external sources for displaying result in right way so internet connection has to be available.** 
+**Important Note: those reports are generated as HTML files. They use external sources for displaying result in right way so internet connection has to be available. If you are getting FileNotFound error during creating reports try to shorten name of repository's basic folder or move project to different localization** 
 
 Sample screenshot:
 ![Image](https://github.com/mmgawlowski/Selenium_Python_PyCharm_Sample_POM_project/blob/master/Selenium/Projects/SamplePOMProject_Booking_com/Reports/Reports20190519/test_search_for_place_by_query%2020190519_205151.png?raw=true)
