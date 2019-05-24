@@ -49,9 +49,9 @@ if __name__ == '__main__':
 ```python
 @classmethod
     def setUpClass(cls):
-       #options = Options()
-       #options.headless = True
-       #options.add_argument("--window-size=1920x1080")
+        #options = Options()
+        #options.headless = True
+        #options.add_argument("--window-size=1920x925")
         cls.driver = webdriver.Chrome()  # Add options=options into brackets
         print("Run started")
         cls.driver.maximize_window()
@@ -63,7 +63,7 @@ if __name__ == '__main__':
     def setUpClass(cls):
         options = Options()
         options.headless = True
-        options.add_argument("--window-size=1920x1080")
+        options.add_argument("--window-size=1920x925")
         cls.driver = webdriver.Chrome(options=options)
         print("Run started")
         cls.driver.maximize_window()
