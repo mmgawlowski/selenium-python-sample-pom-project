@@ -2,6 +2,7 @@ import unittest
 import os
 import sys
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 sys.path.append(os.path.join(os.path.dirname(__file__), os.pardir))
 from Templates.StaticMethods import StaticMethods
 
@@ -13,7 +14,9 @@ class TestTemplate(unittest.TestCase):
     # If changed to setUp(self) they will be executed with instance of every test.
     @classmethod
     def setUpClass(cls):
-        cls.driver = webdriver.Chrome()
+       # options = Options()
+       # options.headless = True
+        cls.driver = webdriver.Chrome()  # Add chrome_options=options into brackets
         print("Run started")
         cls.driver.maximize_window()
         cls.driver.get("https://www.booking.com/index.pl.html")
