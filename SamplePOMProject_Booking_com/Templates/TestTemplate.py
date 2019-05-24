@@ -14,9 +14,9 @@ class TestTemplate(unittest.TestCase):
     # If changed to setUp(self) they will be executed with instance of every test.
     @classmethod
     def setUpClass(cls):
-       #options = Options()
-       #options.headless = True
-       #options.add_argument("--window-size=1920x1080")
+        #options = Options()
+        #options.headless = True
+        #options.add_argument("--window-size=1920x925")
         cls.driver = webdriver.Chrome()  # Add options=options into brackets
         print("Run started")
         cls.driver.maximize_window()
