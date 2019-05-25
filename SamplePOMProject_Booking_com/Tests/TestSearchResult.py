@@ -37,8 +37,8 @@ class TestSearchResult(TestTemplate):
         self.assertTrue(search_page.check_result_place_or_destination(query), msg_4)
         # Here is the place to insert expected check in and out date from result page as they are in different format than before:
         # "day of the week dd month yyyy" (you have to use same language as page is displayed).
-        self.assertTrue(search_page.validate_check_in_date("czwartek 12 września 2019"))
-        self.assertTrue(search_page.validate_check_out_date("sobota 14 września 2019"))
+        self.assertTrue(search_page.validate_check_in_date("czwartek 12 Wrzesień 2019"))
+        self.assertTrue(search_page.validate_check_out_date("sobota 14 Wrzesień 2019"))
         print("Result ok")
 
 # With this line Test Case can be executed from command line and report will be created.
