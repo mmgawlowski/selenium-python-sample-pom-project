@@ -11,9 +11,9 @@
         <div class="row">
             <div class="col-xs-12">
                 <h2 class="text-capitalize">Unittest Results</h2>
-                <p class='attribute'><strong>Start Time: </strong>2019-05-19 20:51:36</p>
-                <p class='attribute'><strong>Duration: </strong>3.83 s</p>
-                <p class='attribute'><strong>Summary: </strong>Total: 1, Pass: 0, Fail: 1</p>
+                <p class='attribute'><strong>Start Time: </strong>2019-05-25 10:28:15</p>
+                <p class='attribute'><strong>Duration: </strong>102 ms</p>
+                <p class='attribute'><strong>Summary: </strong>Total: 2, Pass: 2</p>
             </div>
         </div>
         <div class="row">
@@ -21,16 +21,30 @@
                 <table class='table table-hover table-responsive'>
                     <thead>
                         <tr>
-                            <th>Projects.SamplePOMProject_Booking_com.Tests.TestSearchResult.TestSearchResult</th>
+                            <th>Tests.TestHomePage.TestHomePage</th>
                             <th>Status</th>
                             <th></th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class='danger'>
-                            <td class="col-xs-10">test_search_for_place_by_query</td>
+                        <tr class='success'>
+                            <td class="col-xs-10">test_home_page_elements_available</td>
                             <td class="col-xs-1">
-                                <span class="label label-danger" style="display:block;width:40px;">Fail</span>
+                                <span class="label label-success" style="display:block;width:40px;">Pass</span>
+                            </td>
+                            <td class="col-xs-1">
+                                <button class="btn btn-default btn-xs">View</button>
+                            </td>
+                        </tr>
+                        <tr style="display:none;">
+                            <td class="col-xs-9" colspan="3"><p>Home Page elements checked
+</p>
+                            </td>
+                        </tr>
+                        <tr class='success'>
+                            <td class="col-xs-10">test_home_page_loaded</td>
+                            <td class="col-xs-1">
+                                <span class="label label-success" style="display:block;width:40px;">Pass</span>
                             </td>
                             <td class="col-xs-1">
                                 <button class="btn btn-default btn-xs">View</button>
@@ -38,16 +52,13 @@
                         </tr>
                         <tr style="display:none;">
                             <td class="col-xs-9" colspan="3"><p>Test has started
-</p><p style="color:maroon;">AssertionError: False is not true : Search result could not be confirmed - query not recognized by search engine</p><p style="color:maroon;">Traceback (most recent call last):
-  File "D:\JetBrains\PyCharm Community Edition 2019.1.1\PycharmProjects\Selenium\Projects\SamplePOMProject_Booking_com\Tests\TestSearchResult.py", line 23, in test_search_for_place_by_query
-    self.assertTrue(search_page.check_for_invalid_query(), msg)
-AssertionError: False is not true : Search result could not be confirmed - query not recognized by search engine
+Home Page checked
 </p>
                             </td>
                         </tr>
                         <tr>
                             <td colspan="3">
-                                Total: 1, Pass: 0, Fail: 1 -- Duration: 3.83 s
+                                Total: 2, Pass: 2 -- Duration: 102 ms
                             </td>
                         </tr>
                     </tbody>
