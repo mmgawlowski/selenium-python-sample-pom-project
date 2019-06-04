@@ -13,7 +13,7 @@ class Locators():
     invalid_date_range_alert_xpath = "//div[@data-component='search/dates/dates-errors']/div"
     empty_query_alert_xpath = "//div[@class='fe_banner fe_banner__accessible fe_banner__red -visible'][@id='destination__error']"
 
-    # SearchPage locators
+    # ResultPage locators
 
     search_destination_result_xpath = "//div[@role='heading']/h1"
     search_result_xpath = "//span[contains(text(), '%s')]"

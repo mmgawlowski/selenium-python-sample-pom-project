@@ -15,19 +15,29 @@ from Templates.StaticMethods import StaticMethods
 # Example Test Case with two tests for checking if proper home page is loaded and its elements are available.
 class TestHomePage(TestTemplate):
 
-    def test_home_page_loaded(self):
+    flag = True
+
+    def test01_home_page_loaded(self):
         print("Test has started")
         home_page = HomePage(self.driver)
         # Assertion if given condition is True with optional message when assertion error is raised.
-        self.assertTrue(home_page.check_home_page_loaded(), 'Page could not be loaded')
-        print('Home Page checked')
+        try:
+            self.assertTrue(home_page.check_home_page_loaded(), 'Page could not be loaded')
+            print('Home Page checked')
+        except AssertionError:
+            TestHomePage.flag = False
+            raise
 
-    def test_home_page_elements_available(self):
+    def test02_home_page_elements_available(self):
+        if TestHomePage.flag == False:
+            self.skipTest("Home page is not loaded")
         home_page = HomePage(self.driver)
-        self.assertTrue(home_page.check_searchbox())
-        self.assertTrue(home_page.check_calendar())
-        self.assertTrue(home_page.check_search_button())
-        print("Home Page elements checked")
+        with self.subTest("Checking searchbox"):
+            self.assertTrue(home_page.check_searchbox())
+        with self.subTest("Checking calendar"):
+            self.assertTrue(home_page.check_calendar())
+        with self.subTest("Checking search button"):
+            self.assertTrue(home_page.check_search_button())
 
 # With this line Test Case can be executed from command line and report will be created.
 if __name__ == '__main__':
