@@ -66,3 +66,33 @@ class HomePage(BasePage):
     # It returns is_enabled() statement to assertion from Test Case or raises exception.
     def check_search_button(self):
         return self.driver.find_element_by_xpath(Locators.search_button_xpath).is_enabled()
+
+    # Method checks whether warning related to empty query is displayed or not.
+    def check_for_empty_query(self):
+        try:
+            self.driver.find_element_by_xpath(Locators.empty_query_alert_xpath).is_displayed()
+        except NoSuchElementException:
+            print("Query not empty")
+            return True
+        else:
+            return False
+
+    # Method checks whether warning related to unrecognized query is displayed or not.
+    def check_for_invalid_query(self):
+        try:
+            self.driver.find_element_by_class_name(Locators.invalid_query_alert_class_name).is_displayed()
+        except NoSuchElementException:
+            print("Query ok")
+            return True
+        else:
+            return False
+
+    # Method checks whether warning related to date range exceeding 30 days is displayed or not.
+    def check_for_invalid_date_range(self):
+        try:
+            self.driver.find_element_by_xpath(Locators.invalid_date_range_alert_xpath).is_displayed()
+        except NoSuchElementException:
+            print("Date range ok")
+            return True
+        else:
+            return False
