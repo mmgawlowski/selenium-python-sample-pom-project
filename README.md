@@ -73,20 +73,20 @@ if __name__ == '__main__':
 **Example of report and automated screenshot:**
 
 Report pass:
-![Image](https://github.com/mmgawlowski/Selenium_Python_PyCharm_Sample_POM_project/blob/master/SamplePOMProject_Booking_com/Reports/Reports20190525/Sample%20report%20pass.png?raw=true)
+![Image](https://github.com/mmgawlowski/Selenium_Python_PyCharm_Sample_POM_project/blob/Tests-rearranged/SamplePOMProject_Booking_com/Reports/Reports20190605/Sample_pass_report.png?raw=true)
 
-Report fail:
-![Image](https://github.com/mmgawlowski/Selenium_Python_PyCharm_Sample_POM_project/blob/master/SamplePOMProject_Booking_com/Reports/Reports20190525/Sample%20report%20failed.png?raw=true)
+Report fail and skip:
+![Image](https://github.com/mmgawlowski/Selenium_Python_PyCharm_Sample_POM_project/blob/Tests-rearranged/SamplePOMProject_Booking_com/Reports/Reports20190605/Sample_pass_fail_skip_report.png?raw=true)
 
 **Important Note: those reports are generated as HTML files. They use external sources for displaying result in right way so internet connection has to be available. If you are getting FileNotFound error during creating reports try to shorten name of repository's basic folder or move project to different localization.** 
 
 Sample screenshot:
-![Image](https://github.com/mmgawlowski/Selenium_Python_PyCharm_Sample_POM_project/blob/master/SamplePOMProject_Booking_com/Reports/Reports20190525/test_search_for_place_by_query%2020190525_102831.png?raw=true)
+![Image](https://github.com/mmgawlowski/Selenium_Python_PyCharm_Sample_POM_project/blob/Tests-rearranged/SamplePOMProject_Booking_com/Reports/Reports20190605/test01_query_validation%2020190605_000242.png?raw=true)
 
 ## Suggestions - to do list:
 - HTMLTestRunner could be implemented instead of html-testRunner as it is more elegant for generation of test suites reports but it is not compatible with newer version of Python. There are people who work on that but their newest version is compatible only up to Python 3.5. Look [here](https://github.com/dash0002/HTMLTestRunner) for details.
 
-- [x] Test from TestSearchResult should be divided to smaller tests or soft assertion should be implemented but "softtest" package is not compatible with version of Python I used. Those assertion are dependent on each other so before dividing them I need to find a way to run them one by one, not parallel and skip them when earlier test fail.
+- [x] Test from TestSearchResult should be divided to smaller tests or soft assertion should be implemented but "softtest" package is not compatible with version of Python I used. Those assertion are dependent on each other so before dividing them I need to find a way to run them one by one, not parallel and skip them when earlier test fail. (Completed)
 
 - I want to add test case name to test name while creating screenshot.
 Changing:
