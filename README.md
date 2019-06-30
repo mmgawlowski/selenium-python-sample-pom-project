@@ -104,7 +104,7 @@ to:
 def screen_shot(self):
         # This line allows addition of test name to the name of screenshot file.
         # I would use self.id() to get also Test Case name but it does't work when Test Case is loaded in Test Suite from different file...
-        test_method_name = self._id()
+        test_method_name = self.id()
         for method, error in self._outcome.errors:
             if error:
                 StaticMethods.save_screenshot_picture(self.driver, test_method_name)
