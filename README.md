@@ -78,7 +78,7 @@ Report pass:
 Report fail and skip:
 ![Image](https://github.com/mmgawlowski/Selenium_Python_PyCharm_Sample_POM_project/blob/master/SamplePOMProject_Booking_com/Reports/Reports20190605/Sample_pass_fail_skip_report.png?raw=true)
 
-**Important Note: those reports are generated as HTML files. They use external sources for displaying result in right way so internet connection has to be available. If you are getting FileNotFound error during creating reports try to shorten name of repository's basic folder or move project to different localization.** 
+**Important Note: those reports are generated as HTML files. They use external sources for displaying result in right way so internet connection has to be available. If you are getting FileNotFound error during creating reports it means your path to the report file is too long. Try to shorten name of repository's basic folder or move project to different localization.** 
 
 Sample screenshot:
 ![Image](https://github.com/mmgawlowski/Selenium_Python_PyCharm_Sample_POM_project/blob/master/SamplePOMProject_Booking_com/Reports/Reports20190605/test01_query_validation%2020190605_000242.png?raw=true)
