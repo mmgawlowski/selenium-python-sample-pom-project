@@ -18,7 +18,7 @@ class HomePage(BasePage):
     empty_query_alert_xpath = "//div[@class='fe_banner fe_banner__accessible fe_banner__red -visible'][@id='destination__error']"
 
     '''
-    $s is not a part of the selector. It is Python's operator used for inserting additional elements to the string
+    "%s" is not a part of the selector. It is Python's operator used for inserting additional elements to the string
     E.g. self.driver.find_element_by_xpath(ResultPage.check_in_date_xpath % check_in) will be translated to:
     self.driver.find_element_by_xpath("//td[@data-date='%s']" % 2019-09-12) and finally to:
     self.driver.find_element_by_xpath("//td[@data-date='2019-09-12']")
