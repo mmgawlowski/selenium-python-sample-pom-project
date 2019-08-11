@@ -27,33 +27,33 @@ class HomePage(BasePage):
     # This method checks if search field on home page is present and then put there text from given query imitating input from keyboard.
     def set_place_to_search(self, query: str):
         wait(self.driver, 10).until(
-        EC.presence_of_element_located((By.ID, HomePage.searchbox_id)))
-        self.driver.find_element_by_id(HomePage.searchbox_id).send_keys(query)
+        EC.presence_of_element_located((By.ID, self.searchbox_id)))
+        self.driver.find_element_by_id(self.searchbox_id).send_keys(query)
 
     # This method uses calendar to select chosen check in and out date imitating user's mouse left click.
     # It checks if chosen date is visible, if not it clicks "next" - arrow button until it is then clicks on date.
     def set_check_in_check_out_date(self, check_in, check_out):
-        self.driver.find_element_by_class_name(HomePage.calendar_button_class_name).click()
+        self.driver.find_element_by_class_name(self.calendar_button_class_name).click()
         while True:
             try:
-                self.driver.find_element_by_xpath(HomePage.check_in_date_xpath % check_in).is_displayed()
+                self.driver.find_element_by_xpath(self.check_in_date_xpath % check_in).is_displayed()
             except NoSuchElementException:
-                self.driver.find_element_by_xpath(HomePage.calendar_button_next_xpath).click()
+                self.driver.find_element_by_xpath(self.calendar_button_next_xpath).click()
             else:
                 break
-        self.driver.find_element_by_xpath(HomePage.check_in_date_xpath % check_in).click()
+        self.driver.find_element_by_xpath(self.check_in_date_xpath % check_in).click()
         while True:
             try:
-                self.driver.find_element_by_xpath(HomePage.check_out_date_xpath % check_out).is_displayed()
+                self.driver.find_element_by_xpath(self.check_out_date_xpath % check_out).is_displayed()
             except NoSuchElementException:
-                self.driver.find_element_by_xpath(HomePage.calendar_button_next_xpath).click()
+                self.driver.find_element_by_xpath(self.calendar_button_next_xpath).click()
             else:
                 break
-        self.driver.find_element_by_xpath(HomePage.check_out_date_xpath % check_out).click()
+        self.driver.find_element_by_xpath(self.check_out_date_xpath % check_out).click()
 
     # Method which finds and clicks on search button.
     def search(self):
-        self.driver.find_element_by_xpath(HomePage.search_button_xpath).click()
+        self.driver.find_element_by_xpath(self.search_button_xpath).click()
 
     # Method for checking if home page is loaded and its title contains phrase "Booking.com".
     # It returns True or False to assertion from Test Case.
@@ -70,23 +70,23 @@ class HomePage(BasePage):
     # It returns is_enabled() statement to assertion from Test Case or raises exception.
     def check_searchbox(self):
         wait(self.driver, 10).until(
-            EC.presence_of_element_located((By.ID, HomePage.searchbox_id)))
-        return self.driver.find_element_by_id(HomePage.searchbox_id).is_enabled()
+            EC.presence_of_element_located((By.ID, self.searchbox_id)))
+        return self.driver.find_element_by_id(self.searchbox_id).is_enabled()
 
     # Method for checking if calendar is enabled.
     # It returns is_enabled() statement to assertion from Test Case or raises exception.
     def check_calendar(self):
-        return self.driver.find_element_by_class_name(HomePage.calendar_button_class_name).is_enabled()
+        return self.driver.find_element_by_class_name(self.calendar_button_class_name).is_enabled()
 
     # Method for checking if search button is and enabled.
     # It returns is_enabled() statement to assertion from Test Case or raises exception.
     def check_search_button(self):
-        return self.driver.find_element_by_xpath(HomePage.search_button_xpath).is_enabled()
+        return self.driver.find_element_by_xpath(self.search_button_xpath).is_enabled()
 
     # Method checks whether warning related to empty query is displayed or not.
     def check_for_empty_query(self):
         try:
-            self.driver.find_element_by_xpath(HomePage.empty_query_alert_xpath).is_displayed()
+            self.driver.find_element_by_xpath(self.empty_query_alert_xpath).is_displayed()
         except NoSuchElementException:
             print("Query not empty")
             return True
@@ -96,7 +96,7 @@ class HomePage(BasePage):
     # Method checks whether warning related to unrecognized query is displayed or not.
     def check_for_invalid_query(self):
         try:
-            self.driver.find_element_by_class_name(HomePage.invalid_query_alert_class_name).is_displayed()
+            self.driver.find_element_by_class_name(self.invalid_query_alert_class_name).is_displayed()
         except NoSuchElementException:
             print("Query ok")
             return True
@@ -106,7 +106,7 @@ class HomePage(BasePage):
     # Method checks whether warning related to date range exceeding 30 days is displayed or not.
     def check_for_invalid_date_range(self):
         try:
-            self.driver.find_element_by_xpath(HomePage.invalid_date_range_alert_xpath).is_displayed()
+            self.driver.find_element_by_xpath(self.invalid_date_range_alert_xpath).is_displayed()
         except NoSuchElementException:
             print("Date range ok")
             return True
